@@ -1,0 +1,9 @@
+.label {
+    -fx-text-fill: black;
+    -fx-font-size: 150%;
+    -fx-font-weight: bold;
+}
+
+.gridPane {
+    -fx-background-image: url(background-memory.png);
+}
