@@ -1,28 +1,29 @@
 package com.kodilla.memoryfx;
 
-import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.image.Image;
-import javafx.scene.layout.FlowPane;
-import javafx.stage.Stage;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
 public class Board {
     private List board;
-    private int index;
+    private int revealed;
+
+    public int getIndex() {
+        return revealed;
+    }
+
+    public void setIndex(int revealed) {
+        this.revealed = revealed;
+    }
 
     public Board(int numberOfBlocks) {
         board = new ArrayList<>();
-        index = 0;
+        revealed = 0;
 
         try {
             for(int i = 1; i <= (numberOfBlocks/2); i++) {
-                Image blockImage = new Image(Block.getFilename(i));
-                Block blockA = new Block(i, false, blockImage, false);
-                Block blockB = new Block(i, true, blockImage, false);
+                Block blockA = new Block(i, false, false);
+                Block blockB = new Block(i, true, false);
                 addBlock(blockA);
                 addBlock(blockB);
             }
@@ -42,7 +43,7 @@ public class Board {
 
     public int getNumberOfBlocksRevealed() {
 
-        return board.size() - index;
+        return board.size() - revealed;
     }
 
     public void shuffle() {
@@ -55,6 +56,7 @@ public class Board {
 
     public List<Block> listBlocks() {
         int n = 0;
+        System.out.println("Lista bloków:");
 
         for (Object block: board) {
             n++;

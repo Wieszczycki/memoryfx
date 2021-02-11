@@ -9,6 +9,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
 
 <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kodilla.memoryfx.FXMLController">
     <children>
@@ -24,7 +25,7 @@
           <RowConstraints maxHeight="168.3332977294922" minHeight="0.0" prefHeight="88.00004069010413" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button fx:id="buttonNewGame" contentDisplay="CENTER" mnemonicParsing="false" onAction="#buttonClicked" text="Nowa gra" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.valignment="TOP">
+            <Button fx:id="buttonNewGame" contentDisplay="CENTER" mnemonicParsing="false" onAction="#buttonNewGameClicked" prefHeight="41.0" prefWidth="68.0" text="Nowa gra" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.valignment="TOP">
                <effect>
                   <DropShadow />
                </effect>
@@ -32,17 +33,26 @@
                   <Insets right="10.0" top="10.0" />
                </GridPane.margin>
             </Button>
-            <Label fx:id="playerScore" alignment="TOP_LEFT" prefHeight="61.0" prefWidth="141.0" stylesheets="@styles.css" text="Punkty zawodnika: 0" wrapText="true" GridPane.valignment="TOP">
+            <Label fx:id="labelScore1" alignment="TOP_LEFT" prefHeight="61.0" prefWidth="141.0" stylesheets="@styles.css" text="Gracz A: 0 pkt" wrapText="true" GridPane.valignment="TOP">
                <GridPane.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </GridPane.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
             </Label>
-            <Label fx:id="cpuScore" alignment="TOP_RIGHT" prefHeight="61.0" prefWidth="149.0" stylesheets="@styles.css" text="Punkty przeciwnika: 0" wrapText="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="TOP">
+            <Label fx:id="labelScore2" alignment="TOP_RIGHT" prefHeight="61.0" prefWidth="149.0" stylesheets="@styles.css" text="Gracz B: 0 pkt" wrapText="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="TOP">
                <GridPane.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </GridPane.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
             </Label>
-              <Label fx:id="labelInfo" text="JavaFX and Java versions" GridPane.columnIndex="1" GridPane.valignment="BOTTOM" />
+              <Label fx:id="labelInfo" text="JavaFX and Java versions" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="TOP">
+               <GridPane.margin>
+                  <Insets top="10.0" />
+               </GridPane.margin></Label>
             <FlowPane fx:id="boardPane" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />

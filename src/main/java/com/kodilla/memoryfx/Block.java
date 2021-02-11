@@ -1,18 +1,19 @@
 package com.kodilla.memoryfx;
 
-import javafx.scene.image.Image;
-
 public class Block {
 
     private Integer blockValue;
     private boolean blockClone;
-    private Image blockImage;
+
+    public void setBlockRevealed(boolean blockRevealed) {
+        this.blockRevealed = blockRevealed;
+    }
+
     private boolean blockRevealed;
 
-    public Block(Integer blockValue, boolean blockClone, Image blockImage, boolean blockRevealed) {
+    public Block(Integer blockValue, boolean blockClone, boolean blockRevealed) {
         this.blockValue = blockValue;
         this.blockClone = blockClone;
-        this.blockImage = blockImage;
         this.blockRevealed = blockRevealed;
     }
 
@@ -28,19 +29,19 @@ public class Block {
         return blockClone;
     }
 
-    public Image getBlockImage() {
-        return blockImage;
+    public boolean isBlockRevealed() {
+        return blockRevealed;
     }
 
     @Override
     public String toString() {
         String value, clone, revealed;
 
-        value = "[" + blockValue.toString();
+        value = "" + blockValue.toString();
         if (blockClone) {
-            clone = "A]";
+            clone = "A";
         } else {
-            clone = "B]";
+            clone = "B";
         }
         if (blockRevealed) {
             revealed = "=X";
@@ -48,7 +49,8 @@ public class Block {
             revealed = "=O";
         }
 
-        return value + clone + revealed;
+        //return value + clone + revealed;
+        return value + clone;
     }
 }
 
